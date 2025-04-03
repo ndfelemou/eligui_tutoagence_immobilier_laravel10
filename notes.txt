@@ -1,0 +1,23 @@
+
+INSERT INTO properties (
+    title, 
+    description, 
+    surface, 
+    rooms, 
+    bedrooms, 
+    floor, 
+    price, 
+    city, 
+    address, 
+    postal_code, 
+) VALUES
+
+('Villa moderne à Kaloum', 'Villa climatisée 4 chambres avec gardien', 180, 5, 4, 0, 350000000,  'Conakry', 'Rue KA 001', NULL),
+('Appartement Dixinn', 'Appart 3 chambres vue mer, standing moyen', 110, 3, 3, 2, 180000000,  'Conakry', 'Boulevard du Commerce', NULL),
+('Terrain Ratoma', 'Terrain viabilisé 500m² constructible', 500, 0, 0, 0, 750000000,  'Conakry', 'Secteur Ratoma Centre', NULL),
+('Maison centre-ville Kindia', 'Maison ancienne rénovée 3 chambres', 150, 4, 3, 0, 120000000,  'Kindia', 'Avenue de la Gare', NULL),
+('Commerce Kankan', 'Local commercial 80m² en centre-ville', 80, 1, 0, 0, 95000000,  'Kankan', 'Marché central', NULL),
+('Résidence Labé', 'Résidence sécurisée 2 appartements', 200, 6, 4, 1, 150000000,  'Labé', 'Quartier Lansanaya', NULL),
+('Villa Boké', 'Villa neuve avec puit et générateur', 220, 5, 4, 0, 280000000,  'Boké', 'Route minière', NULL),
+('Terrain agricole Fria', '5 hectares terre fertile avec puits', 50000, 0, 0, 0, 650000000,  'Fria', 'Zone rurale', NULL),
+('Appartement Nzérékoré', 'Appartement meublé centre-ville', 85, 2, 1, 3, 85000000,  'Nzérékoré', 'Avenue des Palmiers', NULL);
