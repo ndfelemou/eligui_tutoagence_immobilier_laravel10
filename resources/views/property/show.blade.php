@@ -11,47 +11,51 @@
 
         <hr>
         <div class="mt-4">
-            <h4>Intéressé par ce bien ?</h4>
+            @include('shared.flash')
 
-            <form action="" method="post" class="vstack gap-3">
-                @csrf
-                <div class="row">
+            @if (!session('success'))
+                <h4>Intéressé par ce bien ?</h4>
+                <p>Vous pouvez nous contacter en remplissant le formulaire ci-dessous.</p>
+                <form action="{{ route('property.contact', $property) }}" method="post" class="vstack gap-3">
+                    @csrf
+                    <div class="row">
+                        @include('shared.input', [
+                            'class' => 'col',
+                            'name' => 'firstname',
+                            'label' => 'Prénom',
+                        ])
+
+                        @include('shared.input', [
+                            'class' => 'col',
+                            'name' => 'lastname',
+                            'label' => 'Nom',
+                        ])
+
+                        @include('shared.input', [
+                            'class' => 'col',
+                            'name' => 'phone',
+                            'label' => 'Téléphone',
+                        ])
+
+                        @include('shared.input', [
+                            'class' => 'col',
+                            'name' => 'email',
+                            'label' => 'Email',
+                            'type' => 'email',
+                        ])
+                    </div>
                     @include('shared.input', [
                         'class' => 'col',
-                        'name' => 'firstname',
-                        'label' => 'Prénom',
+                        'name' => 'message',
+                        'label' => 'Votre message',
+                        'type' => 'textarea',
                     ])
 
-                    @include('shared.input', [
-                        'class' => 'col',
-                        'name' => 'lastname',
-                        'label' => 'Nom',
-                    ])
-
-                    @include('shared.input', [
-                        'class' => 'col',
-                        'name' => 'phone',
-                        'label' => 'Téléphone',
-                    ])
-
-                    @include('shared.input', [
-                        'class' => 'col',
-                        'name' => 'email',
-                        'label' => 'Email',
-                        'type' => 'email',
-                    ])
-                </div>
-                @include('shared.input', [
-                    'class' => 'col',
-                    'name' => 'message',
-                    'label' => 'Votre message',
-                    'type' => 'textarea',
-                ])
-
-                <div>
-                    <button class="btn btn-sm btn-primary">Nous contacter <i class="bi bi-send"></i></button>
-                </div>
-            </form>
+                    <div>
+                        <button class="btn btn-sm btn-primary">Nous contacter <i class="bi bi-send"></i></button>
+                    </div>
+                </form>
+            @endif
         </div>
 
         <div class="mt-4">

@@ -16,7 +16,7 @@
             </p>
 
             <div class="d-flex gap-3 justify-content-center">
-                <a href="#biens" class="btn btn-primary btn-lg px-4 rounded-pill">
+                <a href="{{ route('property.index') }}" class="btn btn-primary btn-lg px-4 rounded-pill">
                     <i class="bi bi-house-door me-2"></i>Voir tous les biens
                 </a>
                 <a href="#contact" class="btn btn-outline-secondary btn-lg px-4 rounded-pill">

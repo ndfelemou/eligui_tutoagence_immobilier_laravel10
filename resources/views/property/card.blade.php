@@ -6,7 +6,7 @@
         </h5>
 
         @if ($property->sold == 0)
-            <span class="badge rounded-pill text-bg-danger">Vendu</span>
+            <small class="badge rounded-pill text-bg-danger">Vendu</small>
         @else
             <small class="badge rounded-pill text-bg-success">Disponible</small>
         @endif
