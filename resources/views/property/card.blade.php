@@ -6,9 +6,9 @@
         </h5>
 
         @if ($property->sold == 0)
-            <small class="badge rounded-pill text-bg-danger">Vendu</small>
-        @else
             <small class="badge rounded-pill text-bg-success">Disponible</small>
+        @else
+            <small class="badge rounded-pill text-bg-danger">Vendu</small>
         @endif
 
         <p class="card-text">{{ $property->surface }} m² / {{ $property->city }} - {{ $property->address }}
