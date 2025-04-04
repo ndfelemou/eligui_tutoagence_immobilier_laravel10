@@ -46,19 +46,42 @@
                         </a>
                     </li>
                 </ul>
-                <div class="d-flex">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Mon Compte <i class="bi bi-person-circle"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Se connecter</a></li>
-                                <li><a class="dropdown-item" href="#">S'inscrire</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                <div class="d-flex ms-auto">
+                    @auth
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    {{ Auth::user()->name }} <i class="bi bi-person-circle"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <form action="{{ route('logout') }}" method="post">
+                                            @csrf
+                                            @method('delete')
+
+                                            <button class="dropdown-item">Deconnexion <i class="bi bi-lock"></i></button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    @endauth
+
+                    @guest
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Mon Compte <i class="bi bi-person-circle"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{{ route('login') }}">Se connecter</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('register') }}">S'inscrire</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    @endguest
                 </div>
                 {{-- <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
