@@ -1,8 +1,8 @@
 @extends('base')
-@section('title', 'Détails du bien' . $property->title)
+@section('title', 'Détails du bien : "' . $property->title . '"')
 @section('content')
     <div class="container mt-4">
-        <h1>Détails du bien {{ $property->title }}</h1>
+        <h1>Détails du bien : "{{ $property->title }}"</h1>
         <h2>{{ $property->rooms }} pièces - {{ $property->surface }} m²</h2>
 
         <div class="text-primary fw-bold" style="font-size: 4rem">

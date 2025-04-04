@@ -13,11 +13,11 @@ class HomeController extends Controller
         $properties = Property::available()->recent()->limit(4)->get();
         // dd($properties->first()->sold);
 
-        /** @var User $user */
-        $user = User::first();
-        $user->password = '0000';
-        $user->syncChanges();
-        dd($user->password, $user);
+        // /** @var User $user */
+        // $user = User::first();
+        // $user->password = '0000';
+        // $user->syncChanges();
+        // dd($user->password, $user);
 
         return view('home', [
             'properties' => $properties,
