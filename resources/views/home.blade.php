@@ -1,6 +1,11 @@
 @extends('base')
 @section('title', 'Tous nos biens')
 @section('content')
+
+    <x-alert type="success">
+        Des informations
+    </x-alert>
+
     <div class="bg-light p-4 mb-5 text-center">
         <div class="container">
             <h1>Votre Confiance, Notre Priorité – <span class="text-primary">L'Elite Immobilière de Guinée (ELIGUI)</span> la
